@@ -1,6 +1,1281 @@
-<html>
-<header><title>This is title</title></header>
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<title>Rishabh's recto</title>
+<meta name="description" content="Rishabh Gupta did his schooling from Pestle Weed College, Dehradun, India and graduated with a Bachelors in Computer Engineering and a minor in Computer Science from North Dakota State University, Fargo, USA. Currently he is working as a Software analyst assisting the State of Michigan in a wellfare project called BRIDGES." />
+<meta name="keywords" content="rishabh gupta pestle weed college" />
+<link="" rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<script type="text/Javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js">
+</script>
+<script type="text/javascript">
+$(function() {
+  if ($.browser.msie && $.browser.version.substr(0,1)<7)
+  {
+	$('li').has('ul').mouseover(function(){
+		$(this).children('ul').css('visibility','visible');
+		}).mouseout(function(){
+		$(this).children('ul').css('visibility','hidden');
+		})
+  }
+});
+$(function() {
+    $('a').bind('click',function(event){
+		var url = $(this).attr("href");
+		if(url.slice(0, 1) == "#"){
+		  var $anchor = $(this);
+		  $('html, body').stop().animate({
+			  scrollTop: $($anchor.attr('href')).offset().top
+		  }, 1200);
+		  event.preventDefault();
+		}
+    });
+});
+function sticky_relocate() {
+  var window_top = $(window).scrollTop();
+  var stickyTrash_div_top = $('#stickyTrash-anchor').offset().top;
+  if (window_top > stickyTrash_div_top) {
+    $('#stickyTrash').addClass('stick');
+  } else {
+    $('#stickyTrash').removeClass('stick');
+  }
+
+  var stickyClicks_div_top = $('#stickyClicks-anchor').offset().top;
+  if (window_top > stickyClicks_div_top) {
+    $('#stickyClicks').addClass('stick');
+  } else {
+    $('#stickyClicks').removeClass('stick');
+  }
+
+  var stickyWords_div_top = $('#stickyWords-anchor').offset().top;
+  if (window_top > stickyWords_div_top) {
+    $('#stickyWords').addClass('stick');
+  } else {
+    $('#stickyWords').removeClass('stick');
+  }
+
+  var stickyCollege_div_top = $('#stickyCollege-anchor').offset().top;
+  if (window_top > stickyCollege_div_top) {
+    $('#stickyCollege').addClass('stick');
+  } else {
+    $('#stickyCollege').removeClass('stick');
+  }
+
+  var stickyWeblog_div_top = $('#stickyWeblog-anchor').offset().top;
+  if (window_top > stickyWeblog_div_top) {
+    $('#stickyWeblog').addClass('stick');
+  } else {
+    $('#stickyWeblog').removeClass('stick');
+  }
+}
+$(function() {
+  $(window).scroll(sticky_relocate);
+  sticky_relocate();
+});
+
+$(function(){
+    $(window).bind('load', function() {
+        $('.content').each(function() {
+            var post = $(this);
+			var position = post.position().left - $(window).scrollLeft();
+			var pxposition = (position - 173) + 'px';
+			document.getElementById("stickyTrash").style.right=pxposition;
+			document.getElementById("stickyClicks").style.right=pxposition;
+			document.getElementById("stickyWords").style.right=pxposition;
+			document.getElementById("stickyCollege").style.right=pxposition;
+			document.getElementById("stickyWeblog").style.right=pxposition;
+        });
+    });
+});
+$(function(){
+    $(window).bind('mouseenter', function() {
+        $('.content').each(function() {
+            var post = $(this);
+			var position = post.position().left - $(window).scrollLeft();
+			var pxposition = (position - 173) + 'px';
+			document.getElementById("stickyTrash").style.right=pxposition;
+			document.getElementById("stickyClicks").style.right=pxposition;
+			document.getElementById("stickyWords").style.right=pxposition;
+			document.getElementById("stickyCollege").style.right=pxposition;
+			document.getElementById("stickyWeblog").style.right=pxposition;
+        });
+    });
+});
+
+$(function(){
+    $(window).bind('load', function() {
+        $('.content').each(function() {
+            var post = $(this);
+			var height = post.height();
+			var pxheight = height + 'px';
+            /*post.text( pxheight );*/
+			var elem = document.getElementById("sidebar1in");
+			elem.style.paddingBottom=pxheight;
+        });
+    });
+});
+$(function(){
+    $(window).bind('mouseenter', function() {
+        $('.content').each(function() {
+            var post = $(this);
+			var height = post.height();
+			var pxheight = height + 'px';
+            /*post.text( pxheight );*/
+			var elem = document.getElementById("sidebar1in");
+			elem.style.paddingBottom=pxheight;
+        });
+    });
+});
+
+$(function(){
+    $(window).bind('load', function() {
+        $('.sidebar1').each(function() {
+            var post = $(this);
+			var leftdist = post.position().left - $(window).scrollLeft() - 15;
+			var pxleftdist = leftdist + 'px';
+            /*post.text( leftdist );*/
+			var elem = document.getElementById("menu");
+			elem.style.left=pxleftdist;
+        });
+    });
+});
+$(function(){
+    $(window).bind('mouseenter', function() {
+        $('.sidebar1').each(function() {
+            var post = $(this);
+			var leftdist = post.position().left - $(window).scrollLeft() - 15;
+			var pxleftdist = leftdist + 'px';
+            /*post.text( leftdist );*/
+			var elem = document.getElementById("menu");
+			elem.style.left=pxleftdist;
+        });
+    });
+});
+
+/*contact popup begin =====================================*/
+var popupStatus = 0;
+function loadPopup(){
+	if(popupStatus==0){
+		$("#backgroundPopup").css({
+			"opacity": "0.7"
+		});
+	$("#backgroundPopup").fadeIn("slow");
+	$("#popupContact").fadeIn("slow");
+	popupStatus = 1;
+	}
+}
+
+function disablePopup(){
+  if(popupStatus==1){
+	$("#backgroundPopup").fadeOut("slow");
+	$("#popupContact").fadeOut("slow");
+	popupStatus = 0;
+  }
+};
+
+function centerPopup(){
+  var windowWidth = $(window).width();
+  var windowHeight = $(window).height();
+  var popupHeight = $("#popupContact").height();
+  var popupWidth = $("#popupContact").width();
+
+  $("#popupContact").css({
+	"position": "fixed",
+	"top": (windowHeight/2) - (popupHeight/2),
+	"left": (windowWidth/2) - (popupWidth/2)
+  });
+
+  //only need force for IE6
+  $("#backgroundPopup").css({
+	"height": windowHeight
+  });
+};
+/*contact popup end =======================================*/
+
+/*picture screen popup begin ==============================*/
+var picpopupStatus1 = 0;
+function loadPicPopup1(){
+	if(picpopupStatus1==0){
+		$("#picBackgroundPopup").css({
+			"opacity": "0.7"
+		});
+	$("#picBackgroundPopup").fadeIn("slow");
+	$("#picPopup1").fadeIn("slow");
+	picpopupStatus1 = 1;
+	}
+}
+
+function disablePicPopup1(){
+  if(picpopupStatus1==1){
+	$("#picBackgroundPopup").fadeOut("slow");
+	$("#picPopup1").fadeOut("slow");
+	picpopupStatus1 = 0;
+  }
+};
+
+function centerPicPopup1(){
+  var windowWidth = $(window).width();
+  var windowHeight = $(window).height();
+  var popupHeight = $("#picPopup1").height();
+  var popupWidth = $("#picPopup1").width();
+
+  $("#picPopup1").css({
+	"position": "fixed",
+	"top": (windowHeight/2) - (popupHeight/2),
+	"left": ((windowWidth - 20)/2) - (popupWidth/2)
+  });
+
+  //only need force for IE6
+  $("#picBackgroundPopup").css({
+	"height": windowHeight
+  });
+};
+
+/*------*/
+
+$(document).ready(function(){
+  $("#picButton1").click(function(){
+	centerPicPopup1();
+	loadPicPopup1();
+  });
+});
+
+$(document).ready(function(){
+  $("#picBackgroundPopup").click(function(){
+	disablePicPopup1();
+  });
+});
+/*1 ends and 2 begins here*/
+var picpopupStatus2 = 0;
+function loadPicPopup2(){
+	if(picpopupStatus2==0){
+		$("#picBackgroundPopup").css({
+			"opacity": "0.7"
+		});
+	$("#picBackgroundPopup").fadeIn("slow");
+	$("#picPopup2").fadeIn("slow");
+	picpopupStatus2 = 1;
+	}
+}
+
+function disablePicPopup2(){
+  if(picpopupStatus2==1){
+	$("#picBackgroundPopup").fadeOut("slow");
+	$("#picPopup2").fadeOut("slow");
+	picpopupStatus2 = 0;
+  }
+};
+
+function centerPicPopup2(){
+  var windowWidth = $(window).width();
+  var windowHeight = $(window).height();
+  var popupHeight = $("#picPopup2").height();
+  var popupWidth = $("#picPopup2").width();
+
+  $("#picPopup2").css({
+	"position": "fixed",
+	"top": (windowHeight/2) - (popupHeight/2),
+	"left": ((windowWidth - 20)/2) - (popupWidth/2)
+  });
+
+  //only need force for IE6
+  $("#picBackgroundPopup").css({
+	"height": windowHeight
+  });
+};
+
+/*------*/
+
+$(document).ready(function(){
+  $("#picButton2").click(function(){
+	centerPicPopup2();
+	loadPicPopup2();
+  });
+});
+
+$(document).ready(function(){
+  $("#picBackgroundPopup").click(function(){
+	disablePicPopup2();
+  });
+});
+/*picture screen popup end ===============================*/
+
+$(document).ready(function(){
+  $("#button").click(function(){
+	centerPopup();
+	loadPopup();
+  });
+});
+$(document).ready(function(){
+  $("#buttonmenu").click(function(){
+	centerPopup();
+	loadPopup();
+  });
+});
+
+$(document).ready(function(){
+  $("#backgroundPopup").click(function(){
+	disablePopup();
+  });
+});
+
+$(document).ready(function(){
+  $("#cross").click(function(){
+	disablePopup();
+  });
+});
+
+$(function(){
+    $('#button').bind('mouseenter', function() {
+			var elem = document.getElementById("button");
+			elem.style.color="#999";
+    });
+});
+$(function(){
+    $('#button').bind('mouseleave', function() {
+			var elem = document.getElementById("button");
+			elem.style.color="#FFF";
+    });
+});
+
+
+</script>
+<style type="text/css">
+#stickyTrash, #stickyClicks, #stickyWords, #stickyCollege, #stickyWeblog {
+	margin-right:10px;
+	padding: 8px;
+	background-color: #1a1a1a;
+	color: #cbcbcb;
+	font: bold 18px 'Lucida Console', Monaco, monospace;
+	width:90px;
+	text-align:right;
+	border-radius:5px;
+	font-size: 18px;
+	position:absolute;
+	z-index: 10000;
+}
+#stickyTrash.stick, #stickyClicks.stick, #stickyWords.stick, #stickyCollege.stick, #stickyWeblog.stick {
+	border-radius:0px 0px 5px 5px;
+	position: fixed;
+	top: 0;
+	z-index: 10000;
+}
+#backgroundPopup{
+	display:none;
+	position:fixed;
+	_position:absolute; /* hack for internet explorer 6*/
+	height:100%;
+	width:100%;
+	top:0;
+	left:0;
+	background:#000000;
+	z-index:15000;
+}
+#popupContact{
+	display:none;
+	position:fixed;
+	_position:absolute; /* hack for internet explorer 6*/
+	background:#FFFFFF;
+	border:2px solid #cecece;
+	z-index:20000;
+	padding:12px;
+	font-size:13px;
+	text-align:left;
+	border-radius:10px;
+}
+#button{
+	font-family:&quot;Courier New&quot;, Courier, monospace;
+	color:#FFF;
+	font-size:14px;
+	text-decoration:none;
+	cursor: hand;
+	cursor: pointer;
+}
+#cross{
+	position:absolute;
+	top:-10px;
+	right:-10px;
+	font-size:12px;
+	font-weight:bold;
+	font-family:&quot;Courier New&quot;, Courier, monospace;
+	color:#000;
+	background:#999999;
+	padding:5px;
+	border-radius:10px;
+	border:1px solid #000;
+	vertical-align:central;
+	cursor: hand;
+	cursor: pointer;
+}
+
+/*picture screen popup begin ========================*/
+#picBackgroundPopup{
+	display:none;
+	position:fixed;
+	_position:absolute; /* hack for internet explorer 6*/
+	height:100%;
+	width:100%;
+	top:0;
+	left:0;
+	background:#000000;
+	z-index:15000;
+}
+#picPopup1, #picPopup2{
+	float:right;
+	display:none;
+	position:fixed;
+	_position:absolute; /* hack for internet explorer 6*/
+	background:#FFFFFF;
+	opacity:1;
+	border:2px solid #cecece;
+	z-index:20000;
+	width:874px;
+	padding:12px;
+	font-size:13px;
+	text-align:left;
+	border-radius:10px;
+}
+#picButton1, #picButton2{
+	font-family:&quot;Courier New&quot;, Courier, monospace;
+	color:#000;
+	font-weight:bold;
+	font-size:18px;
+	text-decoration:none;
+	cursor: hand;
+	cursor: pointer;
+	z-index:1100;
+	position:relative;
+}
+#expand img{
+	float:left;
+	height:450px;
+	width:54px;
+	border:4px dotted #000000;
+	position:relative;
+	transition: all .6s ease-in-out;
+	-o-transition: all .6s ease-in-out;
+	-moz-transition: all .6s ease-in-out;
+	-webkit-transition: all .6s ease-in-out;
+	margin:0;
+	padding:0;
+}
+#expand img:hover{
+	width:680px;
+	position:relative;
+}
+/*picture screen popup end ===============================*/
+
+#buttonmenu{
+	display:block;
+	cursor: hand;
+	cursor: pointer;
+}
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #000;
+	background-color:#900;
+}
+
+ul, ol, dl {
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-bottom: 0px;
+	padding-top: 10px;
+
+}
+p {
+	margin: 0;
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-bottom: 10px;
+	padding-top: 0px;
+}
+a:link {
+	color: #42413C;
+	text-decoration: underline;
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus {
+	text-decoration: none;
+}
+
+.container {
+	width: 960px;
+	margin: 0 auto;
+	overflow: visible;
+}
+.sidebar1 {
+	float: left;
+	width: 175px;
+	background-color:#000000;
+	position:absolute;
+	top:0px;
+}
+#sidebar1in{
+}
+.content {
+	padding: 0px 0 12px 0;
+	width: 775px;
+	float: right;
+	background-color:#FFFFFF;
+	border-right-width:10px;
+	border-right-style:solid;
+	border-right-color:#000;
+	
+}
+.content ul, .content ol {
+	padding: 0 15px 15px 40px;
+}
+.feedback {
+	position:fixed;
+	padding: 5px 5px;
+	margin: 0 0;
+	right:5px;
+	bottom:5px;
+}
+.feedback a, .feedback a:visited {
+	display: block;
+}
+.feedback a:hover, .feedback a:active, .feedback a:focus {
+	position:relative;
+	animation: tada 0.8s;
+	-moz-animation: tada 0.8s;
+	-webkit-animation: tada 0.8s;
+	-o-animation: tada 0.8s;
+}
+.footer{
+	position:fixed;
+	bottom:0px;
+	z-index:1000;
+	text-align:center;
+}
+
+.strip a:link {
+	font-family:&quot;Courier New&quot;, Courier, monospace;
+	color:#FFF;
+	font-weight:normal;
+	text-decoration: none;
+	font-size: 14px;
+}
+.strip a:visited {
+	color:#FFF;
+	text-decoration: none;
+	font-weight: normal;
+}
+.strip a:hover, a:active, a:focus {
+	color:#999;
+	font-weight: none;
+	text-decoration: none;
+	font-size: 14px;
+}
+.strip{
+	position:absolute;
+	margin: 0;
+	padding: 0 0 2px 0;
+	z-index:2000;
+	height:22px;
+	width:973px;
+	background-color:#900;
+	position:relative;
+	top:-30px;
+	right:190px;
+	border:1px solid #000;
+}
+.gototop{
+	position:fixed;
+	padding: 5px 5px;
+	margin: 0 0;
+	right:40px;
+	bottom:5px;
+}
+.clearfloat {
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+.pagebreak{
+	padding-top:200px;
+}
+.wholepagebreak{
+	padding-top:450px;
+}<!-- editable css code--><!--==================================--><!--==================================--><!--==================================-->
+
+
+#menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align:left;
+}
+#menu {
+	margin: 0px auto;
+	background-color: #1a1a1a;
+	position:fixed;
+	top:15%;
+	width:190px;
+	text-align:right;
+	margin:0;
+	padding:0;
+	z-index:1000;
+}
+#menu:before,
+#menu:after {
+	content: "";
+	display: table;
+}
+
+#menu:after {
+	clear: both;
+}
+
+#menu {
+	zoom:1;
+	
+	cursor:default;
+}
+#menu li {
+	float: left;
+	position: relative;
+}
+
+#menu a {
+	width:150px;
+	float: left;
+	padding: 10px 20px;
+	color: #999;
+	font: bold 18px 'Lucida Console', Monaco, monospace;
+	box-shadow: 0 2px 0 #333, 0 2px 0 #333;
+	text-decoration: none;
+}
+
+#menu li:hover > a, #menu li:active > a {
+	color: #fff;
+	
+}
+
+*html #menu li a:hover { /* IE6 only */
+	color: #fff;
+}
+
+#menu ul {
+	z-index: 0;
+	margin: 0 0 0 10px;
+	_margin: 0; /*IE6 only*/
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	top: 0px;
+	left: 290px;
+	background: #900;
+	text-align:left;
+}
+
+#menu li > ul {
+	transition: all .4s ease-in-out .2s;
+	-o-transition: all .4s ease-in-out .2s;
+	-moz-transition: all .4s ease-in-out .2s;
+	-webkit-transition: all .4s ease-in-out .2s;
+}
+
+#menu li:hover > ul, #menu li:active > ul {
+	z-index:500;
+	opacity: 0.92;
+	visibility: visible;
+	margin: 0;
+	transition: all .4s ease-in-out 0;
+	-o-transition: all .4s ease-in-out 0;
+	-moz-transition: all .4s ease-in-out 0;
+	-webkit-transition: all .4s ease-in-out 0;
+	-webkit-transform: translate(-100px, 0px);
+	-moz-transform: translate(-100px, 0px);
+	-o-transform: translate(-100px, 0px);
+	transform: translate(-100px, 0px);
+}
+
+#menu ul ul {
+	z-index: 0;
+	_margin: 0; /*IE6 only*/
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	top: 0px;
+	left: 695px;
+	margin: 0px;
+	background: none;
+}
+
+#menu ul li > ul {
+	transition: all .4s ease-in-out .6s;
+	-o-transition: all .4s ease-in-out .6s;
+	-moz-transition: all .4s ease-in-out .6s;
+	-webkit-transition: all .4s ease-in-out .6s;
+}
+
+#menu ul li:hover > ul, #menu ul li:active > ul {
+	z-index:500;
+	opacity:1;
+	visibility: visible;
+	margin: 0;
+	transition: all .4s ease-in-out 0s;
+	-o-transition: all .4s ease-in-out 0s;
+	-moz-transition: all .4s ease-in-out 0s;
+	-webkit-transition: all .4s ease-in-out 0s;
+	-webkit-transform: translate(-499px, 0px);
+	-moz-transform: translate(-499px, 0px);
+	-o-transform: translate(-499px, 0px);
+	transform: translate(-499px, 0px);
+}
+
+#menu ul li {
+	float: none;
+	display: block;
+	border: 0;
+	_line-height: 0; /*IE6 only*/
+	/*box-shadow: 0 1px 0 #666, 0 2px 0 #666;*/
+}
+
+#menu ul li:first-child > a:after {
+	content: '';
+	position: absolute;
+	left: -8px;
+	top: 50%;
+	margin-top: -8px;
+	border-left: 0;	
+	border-bottom: 8px solid transparent;
+	border-top: 8px solid transparent;
+	border-right: 8px solid #900;
+}
+
+#menu ul a {
+	padding: 10px 10px 10px 15px;
+	width: 175px;
+	_height: 10px; /*IE6 only*/
+	color:#000;
+	display: block;
+	white-space: nowrap;
+	float: none;
+	text-transform: none;
+}
+
+#menu ul a:hover, #menu ul a:active {
+	font-weight:bold;
+}
+
+#menu ul ul img {
+	opacity:.8;
+	border: 2px solid #000;
+	max-height:190px;
+	max-width:190px;
+	
+	/*
+	position:relative;
+	left:-11px;
+	top:-10px;*/
+}
+#menu ul ul a {	
+	box-shadow:none;
+	padding:0px;
+	margin:0px 0px 0px 4px;
+}
+
+#menu ul ul img:hover, #menu ul ul img:active {
+	opacity:1;
+}
+
+.pic{
+	position:relative;
+	align:center;
+	margin:3px;
+	padding:10px;
+	background-color:#000;
+	max-width:40%;
+	max-height:40%;
+	z-index:100;
+}
+#active img{
+	-webkit-transform: scale(1);
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transition-duration: 500ms;
+	-webkit-transition: -webkit-transform 500ms ease-in;
+	
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
+	transform: scale(1);
+	-moz-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+}
+#active img:hover{
+	z-index:10000;
+	-webkit-transform: scale(2);
+	-webkit-transition-timing-function: ease-in;
+	-webkit-transition-duration: 500ms;
+	
+	-moz-transform: scale(2);
+	-moz-transition-timing-function: ease-in;
+	-moz-transition-duration: 500ms;
+	
+	-o-transform: scale(2);
+	-o-transition-timing-function: ease-in;
+	-o-transition-duration: 500ms;
+	
+	transform: scale(2);
+	transition-timing-function: ease-in;
+	transition-duration: 500ms;
+}<!--==================================--><!--==================================--><!--==================================-->
+--></style>
+</head>
 <body>
-Hello world
+<div class="container">
+<div class="sidebar1">
+<div id="sidebar1in"></div>
+    <ul id="menu" style="list-style: none">
+    <li><a>Trash</a>
+        <ul>
+        <li><a href="#Welcome">Top</a></li>
+        <li><a href="#Germination">Germination</a></li>
+        <li><a href="#Dontclick">Don't click</a></li>
+        <li><a href="#Bottom">Bottom</a></li>
+        <li><img alt="" src="spacer.gif" /></li>
+        </ul>
+    </li>
+	<li><a>Clicks</a>
+        <ul>
+        <li><a href="#Randomclicks">Random</a>
+            <ul>
+            <li><a href="#Randomclicks"><img alt="" src="random.gif" border="1px" /></a></li>
+            </ul>
+        </li>
+        <li><a href="#Dehradun">Dehradun</a>
+            <ul>
+            <li><a href="#Dehradun"><img alt="" src="dehradun.jpg" border="1px" /></a></li>
+            </ul>
+        </li>
+        <li><a href="#Delhi">Delhi</a>
+            <ul>
+            <li><a href="#Delhi"><img alt="" src="delhi.jpg" /></a></li>
+            </ul>
+        </li>
+        <li><a href="#Memphis">Memphis</a>
+            <ul>
+            <li><a href="#Memphis"><img alt="" src="memphis.jpg" /></a></li>
+            </ul>
+        </li>
+        <li><a href="#Fargo">Fargo</a>
+            <ul>
+            <li><a href="#Fargo"><img alt="" src="fargo.jpg" /></a></li>
+            </ul>
+        </li>
+        <li><a href="#Chicago">Chicago</a>
+            <ul>
+            <li><a href="#Chicago"><img alt="" src="chicago.jpg" /></a></li>
+            </ul>
+        </li>
+        <li><a href="#Newyork">New york</a>
+            <ul>
+            <li><a href="#Newyork"><img alt="" src="ny.jpg" /></a></li>
+            </ul>
+        </li>
+        <li><img alt="" src="spacer.gif" /></li>
+        </ul>
+	</li>
+    <li><a>Words</a>
+        <ul>
+        <li><a href="#Induction">Induction</a></li>
+        <li><a href="#Euthanasia">Euthanasia</a></li>
+        <li><a href="#Farewell">Farewell</a></li>
+        <li><img alt="" src="spacer.gif" /></li>
+        </ul>
+    </li>
+    <li><a>College</a>
+        <ul>
+        <li><a href="#NDSU">NDSU</a></li>
+        <li><a href="#Athletics">Athletics</a></li>
+        <li><a href="#Campuses">Campuses</a></li>
+        <li><a href="#ECEdept">ECE Dept.</a></li>
+        <li><img alt="" src="spacer.gif" /></li>
+        </ul>
+    </li>
+    <li><a>WeBLog</a>
+        <ul>
+        <li><a href="#Life">Life</a></li>
+        <li><a href="#Thinkers">Thinkers</a></li>
+        <li><a href="#Thoughts">Thoughts</a></li>
+        <li><img alt="" src="spacer.gif" /></li>
+        </ul>
+    </li>
+	
+	<li><a>WIP</a>
+        <ul>
+        <li><a href="http://www.aakankshaindia.org" target="_blank">Aakanksha</a>
+            <ul>
+            <li><a href="http://www.aakankshaindia.org" target="_blank"><img alt="" src="aakanksha.jpg" border="1px" /></a></li>
+            </ul>
+        </li>
+        <li><a href="http://www.cosmos2.rishabhgupta.us" target="_blank">Gallery</a>
+            <ul>
+            <li><a href="http://www.cosmos2.rishabhgupta.us" target="_blank"><img alt="" src="cosmos.jpg" border="1px" /></a></li>
+            </ul>
+        </li>
+        <li><a href="http://www.wildlife.rishabhgupta.us" target="_blank">WildLife</a>
+            <ul>
+            <li><a href="http://www.wildlife.rishabhgupta.us" target="_blank"><img alt="" src="wildlife.jpg" /></a></li>
+            </ul>
+        </li>
+        <li><a href="http://www.rstech.rishabhgupta.us" target="_blank">Technology</a>
+            <ul>
+            <li><a href="http://www.rstech.rishabhgupta.us" target="_blank"><img alt="" src="tech.jpg" /></a></li>
+            </ul>
+        </li>
+        <li><a href="http://www.slideshow.rishabhgupta.us" target="_blank">SlideShow</a>
+            <ul>
+            <li><a href="http://www.slideshow.rishabhgupta.us" target="_blank"><img alt="" src="slideshow.jpg" /></a></li>
+            </ul>
+        </li>
+        <li><img alt="" src="spacer.gif" /></li>
+        </ul>
+	</li>
+    <li><a><font id="buttonmenu">Contact me</font></a></li>
+    <li><img alt="" src="spacer.gif" /></li>
+    </ul>
+<!-- end .sidebar1 --></div>
+<div class="content" align="left">
+<div id="Welcome1"><br />
+<br /><br />
+<center><strong><font style="line-height: 1.5em"><font style="font-size: 39px; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif">namaste!</font>&nbsp;<font style="font-size: 28px; font-family: 'Lucida Console', Monaco, monospace">k cho!</font>&nbsp;<br />
+<font style="font-size: 28px; font-family: 'Comic Sans MS', cursive">kem cho!</font>&nbsp;<font style="font-size: 20px; font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif">добре-дошъл!</font>&nbsp;<font style="font-size: 27px; font-family: Verdana, Geneva, sans-serif">أهلا وسهلا!</font><br />
+<font style="font-size: 24px; font-family: 'Courier New', Courier, monospace">aur bhaijaan, kaise ho!</font>&nbsp;<font style="font-size: 20px; font-family: Verdana, Geneva, sans-serif">Шчыра-запрашаем!</font><br />
+<font style="font-size: 29px; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif">bienvenue!</font>&nbsp;<font style="font-size: 49px; font-family: 'Courier New', Courier, monospace">whats up!</font>&nbsp;<font style="font-size: 25px; font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif">herzlich-willkommen!</font><br />
+<font style="font-size: 32px; font-family: 'Lucida Console', Monaco, monospace">ahlan-wa-sahlan!</font><font style="font-size: 33px; font-family: 'Times New Roman', Times, serif">kya haal chal!</font><br />
+<font style="font-size: 21px; font-family: 'MS Serif', 'New York', serif">y&ocirc;koso!</font>&nbsp;<font style="font-size: 24px; font-family: 'Times New Roman', Times, serif">bienvenido-bienvenida!</font><br />
+<font style="font-size: 24px; font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif">velkommen!</font></font></strong></center><br />
+<br /><br />
+<br />
+<p><font style="font-size: 24"><strong>Disclaimer:</strong></font><br />
+        This site is <strong>NOT</strong> meant for educational purposes. Knowledge crazy people stay advised, it's all plain old bs around here.</p></div><!-- Welcome1 close -->
+<div class="pagebreak"></div><!--
+        ===================Welcome page ends here=========================
+        ===================Welcome page ends here=========================
+        ===================Welcome page ends here=========================
+        -->
+<div id="stickyTrash">Trash</div>
+<div id="stickyTrash-anchor"></div>
+<div id="Germination">
+<h1>Germination</h1>
+<h3>How this thing came into being.</h3>
+<h4>The story of cigarettes, beer and dedication!</h4>
+<div id="active" class="demobox"><img alt="" src="rishabh%20gupta.jpg" class="pic" style="max-width: 100px; float: left; margin: 4px 10px 0px 15px; padding: 6px; border-radius: 5px" /></div>
+<p>
+        This is Rishabh Gupta 's page and as has been wisely said &quot;Empty mind, devils workshop&quot;, well he (as in me.. talking in third person here) kind of has had an empty mind for a while with just enough devil on the plate plus it's been a while since he had one of those &quot;creative outbursts&quot; so this contribution to the mankind was long overdue. No, No, not at all, you don't have to thank him for this (pun intended, you can thank me though), he owed every individual on this planet this much, so sitback, relax and enjoy the website and beware no ones gonna be returning back here coz everything in here is full bakwas. FYI is website me maine/usne kuch bhi kahin se bhi copy nahi kiya other than wiki which has been mentioned, so we better not be getting any copyright infringement claims.. jk.. some pic previews are from the web, maybe some other stuff too (if you are offended, lemme know.. we'll take it off)! I am probably gonna be adding some actual stuff other than all this bs sometime soon, dont take my word for it though cause I am pretty sure as soon as this site is done I will burrow back into 'procrastinatious' little hole, but incase devil pesters me again I am gonna try to make and upload a couple videos for android users and for mac users, with some tips and tricks you might not have heard before, well atleast some of it for some, all for some, none for all and none for some and also some for some, oh did I forget none for some or whatever.. phew, just trying to cover all possibilities! Well.. that was all bs, prolly one of my firsts but needed to be done to bharo all the khali jagah. Oh and if you have any comments and suggestions please feel free.., to be honest I haven't yet figured out where to place the comments section so look around the site for it, but then again.. knack for reading, not my thing so be advised. Lastly tasharif ka tokra yahan laane ke liye bohot bohot dhanyawaad (imagine me/us/him bowing if you must)!</p></div><!-- Germination close -->
+<div class="pagebreak"></div><!--
+        ===================Germination page ends here=========================
+        ===================Germination page ends here=========================
+        ===================Germination page ends here=========================
+        -->
+<div id="Dontclick">
+<h1>Human nature!</h1>
+<h3>Winner gets a pneny, figure it out!</h3>
+<p>
+        was mnid wrod whotuit it the the is lteter to  lteter the and bcuseae a a hmuan and lsat it in raed oerdr a can tghuhot oerdr a the iprmoetnt phaonmneal the at a to the I can by not not ltteer and The in huamn sitll bcuseae waht can wrod a waht the pweor wlohe slpeling ervey deos the cluod sitll taotl but are deosn't and deos by mttaer the taht pboerlm aoccdrnig mnid taht are, Azanmig taotl aulaclty a can  ltteers waht toatl is was ltteer you and pclae I is and was Azanmig dseno't ervey tihng of cluod can iproamtnt taht a mnid as the be to rset frsit in sitll hmuan wlohe the be rscheearch wrod a at as frist not tghuhot the are i in wrod uesdnatnrd the a was rghit taht rset ipmorantt be pclae you is mses it waht and it I can I is blveiee Uinervtisyit in waht wlohe yaeh be pweor a lsat waht pboerlm mnid ltteres a phaonmneal I but mttaer mses you mses lteter iprmoetnt rset istlef tihs huh? porbelm awlyas raed rdanieg be istlef raed at The bcuseae taht and raed tihng the dseno't the the ervey cdnuolt the lteter frsit of the the not as tihs huamn in in tihng wrod raed deos wouthit as rghit the at yaeh whotuit mnid frist rghit rdanieg by istlef, ltteer in olny be a a raed a blveiee huamn in I ervey it mtaetr the Aoccdrnig slpeling is mtaetr Tihs ipmorantt rscheearch the ltteres raed huh? the aulaclty pclae oredr wrod awlyas aoccdrnig oredr the lsat olny the whotuit awlyas not waht is rghit mnid the and a a not it by raed tihng can the the in yaeh taht tghuhot be mnid  I rscheearch the not are frsit the but Azanmig blveiee mtaetr mtaetr a be wrod ltteer the ipmorantt a ltteres the tghuhot raed wrod you the rset can raed bcuseae raed a oerdr deos mnid was The was aulaclty aoccdrnig rdanieg the cluod and waht the slpeling deos I raed can a mses frist rghit ervey the to was ervey pweor rscheearch I taotl in mttaer raed Uinervtisyit it mnid it pweor frsit be a the hmuan and  wrod the wlohe oredr of in i a lsat a the aulaclty ltteer cdnuolt Aoccdrnig as a huamn ervey sitll oerdr is pboerlm at a iprmoetnt blveiee was I are ervey The waht deosn't as wrod ltteers be in and by tihs a taht as uesdnatnrd can a phaonmneal rdanieg huamn at as wlohe mses lteter to the lteter istlef, in sitll huamn rghit I by porbelm I and tihs dseno't mttaer not and mnid can iprmoetnt in ipmorantt huh? and wouthit is olny the waht in awlyas phaonmneal at istlef wrod it dseno't the in waht ltteres be the lsat huh? Tihs olny raed Azanmig can and lteter but yaeh be istlef in rset lteter at wrod is tihng a the is you it bcuseae taht slpeling rset bcuseae pclae is taotl taht waht pclae the are, taht wlohe cluod mses of pclae ltteer frist aoccdrnig a oredr iproamtnt you deos to the toatl hmuan sitll lsat pboerlm tihng the the whotuit.</p></div><!-- Dontclick close -->
+<div class="pagebreak"></div><!--
+        ===================Dont click page ends here=========================
+        ===================Dont click page ends here=========================
+        ===================Dont click page ends here=========================
+        -->
+<div id="stickyClicks">Clicks</div>
+<div id="stickyClicks-anchor"></div>
+<div id="Randomclicks" class="photos">
+<h1>Random Clicks</h1>
+<h3>The genius inside me!</h3>
+    <div id="active" class="demobox">
+        <img alt="" src="posters.jpg" class="pic" style="left: 80px; top: 50px" />
+        <img alt="" src="bww.jpg" class="pic" style="left: 30px; top: 180px" /><br />
+        <img alt="" src="hyperfuse.jpg" class="pic" style="left: 30px; top: 0px" />
+        <img alt="" src="labame.jpg" class="pic" style="left: 5px; top: 100px" /><br /><br />
+        <img alt="" src="noon.jpg" class="pic" style="left: 50px; top: -50px" />
+        <img alt="" src="kingfisher.jpg" class="pic" style="left: 0px; top: -100px" /><br />
+        <img alt="" src="cigs.jpg" class="pic" style="left: 100px; top: -220px" />
+        <img alt="" src="hukka.jpg" class="pic" style="left: 0px; top: -150px" /><br /><br /><br />
+        <img alt="" src="cans_glow.jpg" class="pic" style="left: 150px; top: -340px" />
+        <img alt="" src="camp.jpg" class="pic" style="left: 40px; top: -260px" /><br /><br /><br /><br /><br />
+        <img alt="" src="ig.jpg" class="pic" style="left: 180px; top: -520px" />
+        <img alt="" src="halloween.jpg" class="pic" style="left: -20px; top: -380px" />
+    </div><!-- Photos close  all photos are in here-->
+</div><!-- Randomclicks close -->
+
+<div id="Dehradun">
+<h1>Dehradun</h1>
+<div id="active" style="margin: 0 6px 0 20px"><img alt="" src="dehradun1.jpg" class="pic" style="max-width: 340px" /><img alt="" src="dehradun2.jpg" class="pic" style="max-width: 340px" /><img alt="" src="dehradun3.jpg" class="pic" style="max-width: 340px" /><img alt="" src="dehradun4.jpg" class="pic" style="max-width: 340px" /></div>
+<p><br />
+<br />Well, now that you are here take a look at some more pics:&nbsp;<font id="picButton1" color="#000000">Click here</font> <br />
+<strong>Beware:</strong> some of them might scream self obsession.</p>
+<div id="picPopup1">
+<div id="expand"><img alt="" src="rishabh_gupta_pics/pestle_weed_college_mess.jpg" /><img alt="" src="rishabh_gupta_pics/rishabh_gupta_receiving_the_chief_guest.jpg" /><img alt="" src="rishabh_gupta_pics/rishabh_gupta_receiving_trophy.jpg" /><img alt="" src="rishabh_gupta_pics/rishabh_gupta_lighting_diya.jpg" /></div></div>
+<div id="picBackgroundPopup"></div><!--
+<p>Well, now that you are here take a look at these self obsession pics:<font id="picButton2" color="#000000">Click here</font></p>
+<div id="picPopup2">
+<div id="expand"><img alt="" src="dehradun2.jpg" /><img alt="" src="dehradun2.jpg" /><img alt="" src="dehradun2.jpg" /><img alt="" src="dehradun2.jpg" /><img alt="" src="dehradun2.jpg" /></div></div>
+<div id="picBackgroundPopup"></div>
+        --></div><!-- Dehradun close -->
+<div class="pagebreak"></div>
+<div id="Delhi">
+<h1>Delhi</h1>
+<div id="active" style="margin: 0 6px 0 20px"><img alt="" src="delhi1.jpg" class="pic" style="max-width: 340px" /><img alt="" src="delhi2.jpg" class="pic" style="max-width: 340px" /><img alt="" src="delhi3.jpg" class="pic" style="max-width: 340px" /><img alt="" src="delhi4.jpg" class="pic" style="max-width: 340px" /></div></div><!-- Delhi close -->
+<div class="pagebreak"></div>
+<div id="Memphis">
+<h1>Memphis</h1>
+<div id="active" style="margin: 0 6px 0 20px"><img alt="" src="memphis1.jpg" class="pic" style="max-width: 340px" /><img alt="" src="memphis2.jpg" class="pic" style="max-width: 340px" /></div></div><!-- Memphis close -->
+<div class="pagebreak"></div>
+<div id="Fargo">
+<h1>Fargo</h1>
+<div id="active" style="margin: 0 6px 0 20px"><img alt="" src="fargo1.jpg" class="pic" style="max-width: 340px" /><img alt="" src="fargo2.jpg" class="pic" style="max-width: 340px" /><img alt="" src="fargo3.jpg" class="pic" style="max-width: 340px" /><img alt="" src="fargo4.jpg" class="pic" style="max-width: 340px" /></div></div><!-- Fargo close -->
+<div class="pagebreak"></div>
+<div id="Chicago">
+<h1>Chicago</h1>
+<div id="active" style="margin: 0 6px 0 20px"><img alt="" src="chicago1.jpg" class="pic" style="max-width: 340px" /><img alt="" src="chicago2.jpg" class="pic" style="max-width: 340px" /></div></div><!-- Chicago close -->
+<div class="pagebreak"></div>
+<div id="Newyork">
+<h1>New York</h1>
+<div id="active" style="margin: 0 6px 0 20px"><img alt="" src="ny1.jpg" class="pic" style="max-width: 340px" /><img alt="" src="ny2.jpg" class="pic" style="max-width: 340px" /><img alt="" src="ny3.jpg" class="pic" style="max-width: 340px" /><img alt="" src="ny4.jpg" class="pic" style="max-width: 340px" /></div></div><!-- Atlanta close -->
+<div class="wholepagebreak"></div><!--
+        ===================Photo page ends here=========================
+        ===================Photo page ends here=========================
+        ===================Photo page ends here=========================
+        -->
+<div id="stickyWords">Words</div>
+<div id="stickyWords-anchor"></div>
+<div id="Induction">
+<h1>Induction ceremony.</h1>
+<h3>The day I became the school captain</h3>
+<h5>Probably the proudest I have ever seen my mom, she loved being congratulated.</h5>
+<div id="active"><img alt="" src="rishabh_gupta_receiving_school_flag.jpg" class="pic" style="max-width: 180px; float: left; margin: 4px 10px 0px 15px; padding: 6px; border-radius: 5px" /></div>
+<p>
+        A very good evening to one and all.
+        Honourable chief guest, members of board of governors, esteemed guests, principal, teachers and my fellow compatriots.</p>
+<p>
+        I was a little innocent kid when I had first joined this institution in class 1 and travelled through 12 golden years. In these years I was gradually and slowly moulded into what and who I am today. I owe this transformation to this institution and to my parents sitting right there (whispering thankyou mom &amp; dad!), who have not left a single stone unturned in shaping me up. All the hard work and  perseverance has helped me to bring laurels to the school and my parents. And this has given me a feeling of satisfaction as today I have the proud privilege to stand before you as the general captain of Pestle Weed College and address this august gathering with all responsibilities and commitments beside me and a whole year to transform this sanctum. It will be my constant endeavour to translate the aspirations into reality and uphold the trust bestowed upon me. I will take up the challenge to lead the students from the front and strive from perfection in every sphere.</p>
+<p>
+        Let me assure that my entire team of prefects is full of enthusiasm and zeal and would like to invite each pestlewanian to travel the coming journey with us, so that as the year rolls by we would have the feeling of satisfaction that we have responsibly done our jobs in the best interest of others. In accomplishing these goals I look forward to the whole hearted co-operation and perseverance of the student council.</p>
+<p>
+        Today we start off with this difficult but challenging journey.</p>
+<p>
+        Thank you and have a wonderful evening.</p></div><!-- Ceremony close -->
+<div class="pagebreak"></div><!--
+        ===================Induction page ends here=========================
+        ===================Induction page ends here=========================
+        ===================Induction page ends here=========================
+        -->
+<div id="Euthanasia">
+<h1>Euthanasia. Necessary evil?</h1>
+<h3>All India inter school debate</h3>
+<div id="active" class="demobox"><img alt="" src="rishabh%20gupta2.gif" class="pic" style="max-width: 100px; float: left; margin: 4px 10px 0px 15px; padding: 0px; border-radius: 5px; border: 6px solid #000; background: none" /></div>
+<p>
+        There's no difference between ones killing and making decisions that will send others to kill. It's exactly the same thing if not worse.</p>
+<p>
+        A very good afternoon to one and all. Ever since the topic was given to me I have had sleepless nights wondering how people can advocate euthnasia. It's not just a debate it's literally about life and death and I strongly oppose the motion.</p>
+<p>
+        First of all let me ask you what is euthanasia?
+        You must have heard about all kinds of euthanasia. But, euthanasia is not about giving rights to the person who dies, instead it is about changing public policy so that doctors and others can directly and intentionally end or participate in ending another person's life. Thus euthanasia is not about the right to die but it is about the right to kill.</p>
+<p>
+        I don't think that we solve the problems by getting rid of the people to whom those problems happen.</p>
+<p>
+        A good relationship between a doctor and a patient is based on trust. If we know that our doctor has killed as well as cured patients in the past would we really trust him without hang-ups and fears? A survey in Netherlands where euthanasia is practiced openly showed that 63% of the people in old age homes feared that their lives might end without their consent and knowledge.</p>
+<p>
+        Even according to religious concepts Almighty God is the giver and sustainer of life. He alone has the right to withdraw life. Life is not a right but a gift.</p>
+<p>
+        When a sick or elderly person asks for euthanasia how can we be sure that they are making free choice to die? How can we be sure that it is their decision and no one has persued them into it? We know that old people are afraid of being a burden to their children. Even pety things like lack of living space and expenses may all push our granny's into asking for euthanasia if it were available, because we know that they are noce people and would never want to see themselves troubling us.</p>
+<p>
+        Medical science and technology have made great strides in the recent years. Medical teams today have more power over life and death that it has had in the past.</p>
+<p>
+        Last month there was a news item about a man who had been paralysed for 14 years but one day suddenly he was able to rise and walk. There are innumerable cases like this. Let me ask you, should we give up hope?</p>
+<p>
+        What amazes and genuinely disturbs me is that we who consider ourselves educated and civilised are sitting here in this hall and contemplating murder. It amazes me that even after seeing how materialistic and violent the world has become we are willing to legalize a new weapon of destruction.</p>
+<p>
+        There was a time when tuberculosis was not curable but now it is. So we never know when man might find a cure for a disease. We never know when we might come up with a solution to relieve pain. We never know when we might find a way to bring a patient back to life.</p>
+<p>
+        As long as there is hope there is life and as long as there is life there is hope.</p></div><!-- Euthnasia close -->
+<div class="pagebreak"></div><!--
+        ===================Euthanasia page ends here=========================
+        ===================Euthanasia page ends here=========================
+        ===================Euthanasia page ends here=========================
+        -->
+<div id="Farewell">
+<h1>Farewell!</h1>
+<div id="active" class="demobox"><img alt="" src="farewell.jpg" class="pic" style="max-width: 350px; float: left; margin: 4px 10px 0px 15px; padding: 6px; border-radius: 5px" /></div>
+<p>
+        A very good evening to one and all.
+        I am short of words to express the gratitude towards this great almamatar. The love and respect I have for this wonderful institution is so vast and so embedded deep inside that these few minutes of 'words of appreciation' are just skim the surface.</p>
+<p>
+        1993 was the year when I had stepped into the new world of Pestle Weed as a minor kid of seven. It was a home 799kms away from home. I was an innocent kid unaware of the reality of life. Gradually I went along with the rhythm of the school and stopped missing home and looked upon this family as my own. Right from class 1 just like every other kid I too had a dream of being the school caption and proper guidance and wonderful opportunities helped me attain this A1 honour that is reserved for a few.</p>
+<p>
+        I must say whatever I have learnt in this institution has helped me to blossom and will continue to guide me in every walk of life.</p>
+<p>
+        I take this opportunity to thank the principal and teachers who have always guided me on the right path and my parents who have infused in me confidence through their numerous letters of guidance and appreciation. Throughout my stay here I have always strived to come up to the expectations of the institution and gave due regards to the elders and love and affection to the youngsters</p>
+<p>
+        This is probably my last chance to be addressing the entire campus and let me tell you I do love giving speeches, but for it's worth I won't forget the days in Pestle Weed and the friends I had. I also take this opportunity to apologise, if knowingly or unknowingly I have ever hurt someone and would like to thank the eleventhees for going overboard with the compliment.. well not really I have been a 'Man of substance' haha.</p>
+<p>
+        So finally it's time I leave this institution as a legal adult. Thank you PestleWanians for all your caring gestures, specially the student body that has supported me through thick and thin. May the school prosper like I have seen for the past decade and reach the zenith of glory.</p>
+<p>
+        Alvida!</p></div><!-- Farewell close -->
+<div class="pagebreak"></div><!--
+        ===================farewell page ends here=========================
+        ===================farewell page ends here=========================
+        ===================farewell page ends here=========================
+        -->
+<div id="stickyCollege">College</div>
+<div id="stickyCollege-anchor"></div>
+<div id="NDSU">
+<h1>NDSU</h1>
+<h3>North Dakota State University</h3>
+<div id="active" class="demobox"><img alt="" src="ndsu_bison.gif" class="pic" style="background: none; border: 5px solid #000; max-width: 100px; float: left; margin: 0px 10px 0px 15px; padding: 6px; border-radius: 5px" /></div>
+<p>
+        North Dakota State University of Agriculture and Applied Sciences, more commonly known as North Dakota State University (NDSU), is a public university in Fargo, North Dakota, United States. NDSU has about 14,000 students and it is the largest university in North Dakota based on full time students and land size. Founded as North Dakota Agricultural College in 1890 as a land grant institution, it sits on a 258 acre campus. The school also operates several agricultural research centers spread over 22,000 acres. NDSU is part of the North Dakota University System.
+        NDSU offers 108 bachelor's, 75 minors, 63 master's, 44 doctoral, and 10 graduate certificate programs. NDSU is a comprehensive doctoral research university with programs involved in high research activity.NDSU uses a semester system - Fall and Spring with two summer sessions. The majority of students are full-time with 54.7% male and 45.3% female.</p>
+<p style="text-align: right"><strong>SOURCE : WIKI</strong></p></div><!-- NDSU close -->
+<div class="pagebreak"></div><!--
+        ===================NDSU main page ends here=========================
+        ===================NDSU main page ends here=========================
+        ===================NDSU main page ends here=========================
+        -->
+<div id="Athletics">
+<h1>Atheletics</h1>
+<h3>HIT 'EM AGAIN!  HIT 'EM AGAIN!</h3>
+<p>
+        NDSU's sports teams are known as the North Dakota State Bison, or simply The Bison; however, they are also known as &quot;The Thundering Herd&quot;. NDSU's athletic symbol is the American Bison.
+        On March 10, 2009, North Dakota State gained a bid to the NCAA Basketball Tournament in its first year of eligibility for Division I postseason play by defeating Oakland 66-64 in the Summit League Tournament Championship game.
+        North Dakota State's intercollegiate sports teams participate in NCAA Division I in all sports (Division I Championship Subdivision in football). NDSU was a charter member of the Division II North Central Conference (NCC), and made the move to Division I sports in the fall of 2004. NDSU spent the next two years as an independent in Division I in all sports other than football in which it is a member of the Great West Football Conference. The school was accepted into The Summit League on August 31, 2006 and began play in that conference on July 1, 2007. The football team left the Great West Football Conference and joined the Missouri Valley Football Conference on March 7, 2007. They became a full member of the conference during the 2008 season.
+        The Bison football team, which plays their home games at the Fargodome (cap. 19,287), was the winningest program in NCC history with twenty-six conference championships. A dominant force in NCAA Division II, and its predecessor NCAA College Division, they won eight national championships (1965, 1968, 1969, 1983, 1985, 1986, 1988, 1990) before moving to Division I Championship Subdivision in 2004. In November 2006, the Bison football team won their first Division I Championship Subdivision Great West Football Conference title against the South Dakota State University Jackrabbits. NDSU football is a major event in the city of Fargo and the region, averaging over 15,000 fans per home game. The men's and women's Bison basketball teams play in the Bison Sports Arena. The women's basketball team was also a dominant force in Division II throughout the 1990s. They won five titles during the decade (1991, 1993, 1994, 1995, 1996). In January 2006, the NCAA recognized NDSU's four consecutive Division II Women's Basketball Championships (1993-1996) as one of the &quot;25 Most Defining Moments in NCAA History.&quot; NDSU's men's basketball team gained national recognition in 2006 with an upset win at #13 ranked Wisconsin, and again in the 2006-07 season with a win at #8 ranked Marquette. In 2009, the Bison earned an automatic bid the NCAA tournament as winners of the Summit League.
+        The Bison wrestling program has also had great success winning four Division II team titles (1988, 1998, 2000, 2001). The team is fully eligible for the Division I tournament competition. They recently joined with six other institutions to create the Western Wrestling Conference.</p>
+<p style="text-align: right"><strong>SOURCE : WIKI</strong></p></div><!-- Athletics close -->
+<div class="pagebreak"></div><!--
+        ===================Athletics page ends here=========================
+        ===================Athletics page ends here=========================
+        ===================Athletics page ends here=========================
+        -->
+<div id="Campuses">
+<h1>Campuses</h1>
+<h3>North Dakota State University</h3>
+<p>
+        North Dakota State University is primarily located in Fargo, North Dakota. NDSU consists of several campuses including: the main campus, NDSU Downtown, South campus, North campus, Research and technology park, Athletic area and several agricultural experiment station campuses.
+        The main campus sits on 258 acres of land and consists of over 100 major buildings. The appearance of the main campus are maintained by the University's extensive agricultural programs. The main campus is located by 19th Avenue to the North, University Drive to the East, and 12th Avenue to the South.
+        Located in the historic Minard - South Engineering quad is the Babbling Brook. The Babbling Brook is a large water feature that offers students a serene location to relax and unwind. Enhancing the area are several waterfalls, various fish and flowers, an amphitheater, and &quot;buffalo-rubbed&quot; rocks. This area also offers a space for the holding of classes outdoors as well as performances. Over the years NDSU's main campus was aesthetically enhanced with many monuments including: the Bjornson Memorial Obelisk, Theatre Passion: Mask Sculpture, We Will Never Forget Memorial, and Noble's Golden Marguerite, among many others.
+        The central area consists of the Engineering Complex, Shepperd Arena, and many academic buildings, and the Industrial Agricultural Communications Center (IACC) which is a technology powerhouse for the entire state. The IACC contains several hundred computers and computer servers for many of the Universities in the North Dakota University System; and many other technologies and communication devices.
+        The NDSU Memorial Union is also situated within the central campus serves the sole purpose of serving student social needs. The NDSU Memorial Union recently completed a multi-million dollar addition and renovation, which including the addition of over 68,000 square feet used for dining facilities, student offices, lounges, meeting and a new ballroom. The renovation includes redesigning the main concourse to better serve students, the addition of the Bison Connection, which is a one stop shop to meet many of the student's administrative needs, and more.
+        The NDSU Memorial Union consists of six restaurants, a coffee shop, a dining center, a rec center, including a bowling alley, the NDSU Bookstore, the Herd Shop convenience store, large, spacious lounges and meeting rooms, a radio station and much more. The large outdoor area to the east of the NDSU Memorial Union, known as Churchill Field, will be converted to a large quad consisting of plazas, water features, amphitheaters, and landscaping features. The quad will provide a great area for students to hang out and relax and will serve as a focal point for outdoor perversions and recreations.</p>
+<p style="text-align: right"><strong>SOURCE : WIKI</strong></p></div><!-- Campuses close -->
+<div class="pagebreak"></div><!--
+        ===================Campuses page ends here=========================
+        ===================Campuses page ends here=========================
+        ===================Campuses page ends here=========================
+        -->
+<div id="ECEdept">
+<h1>ECE Dept.</h1>
+<h3>Introduction</h3>
+<p>
+        tets this The story of the development of the Electrical and Computer Engineering Department at NDSU parallels the history of the technological revolution that has rocked civilization during the twentieth century. It is the history of North Dakota State University and the College of Engineering and Architecture, led by Deans and Chairs with great vision and courage. It is a continuing story of dedicated faculty and staff members developing and improving programs to keep up with the &quot;real&quot; world while working under financial restraints, limited facilities and a location far from the industry it supplies with well-trained graduates. It is a story of students who became grounded in the basic fundamentals of engineering principles and proved the value of personal attention by going out and becoming successful throughout the world.</p><br />
+<h3>Modern Period</h3>
+<p>
+        The department initiated the greatest changes and began the modernization process when Harry Speers Dixon was hired as Department Head in 1946. World War II had started a revolution in the creation of new electronic devices for communication, radar and automation. Thousands of returning servicemen had experience in radio communications, radio, remote controlled armament, automatic pilots and navigational equipment. They were eager to go to college and learn more about these new areas of human progress. Changes were to introduce two options: power and communication electronics. A solid mathematical background was maintained for the curriculum. Dr. Dixon also initiated the practice of having the departmental staff engaged in outside funded research.</p>
+<p style="text-align: right"><strong>SOURCE : A and E site</strong></p></div><!-- ECEdept close -->
+<div class="pagebreak"></div><!--
+        ===================Ece dept page ends here=========================
+        ===================Ece dept page ends here=========================
+        ===================Ece dept page ends here=========================
+        -->
+<div id="stickyWeblog">WeBLog</div>
+<div id="stickyWeblog-anchor"></div>
+<center>
+<div id="Life"><br />
+<br /><br />
+<br /><br />
+<h1>Life as we know it!</h1><br />
+<p>
+        Oh hell 'o mine,<br />
+        Do we dine,<br />
+        from friday to shine,<br />
+        monday thy divine,<br />
+        the sturdy shrine,<br />
+        forbid the cometh sublime,<br />
+        in eternity, may we jive<br />
+        blossoming wrath of wine.<br />
+<br /><font style="position: relative; left: 60px">- Rishabh Gupta</font></p></div><!-- Life close --></center>
+<div class="pagebreak"></div><!--
+        ===================Life page ends here=========================
+        ===================Life page ends here=========================
+        ===================Life page ends here=========================
+        -->
+<center>
+<div id="Thinkers"><br />
+<br /><br />
+<br /><br />
+<h1>Thinkers paradise!</h1><br />
+<p>
+        Serenity is profound at best a collage,<br />
+        mixed up memories montage,<br />
+        it comes closer shadows enlarge,<br />
+        for most sinners death contours a mirage.<br />
+        Wearing a mask of barrage,<br />
+        thinks we are the ones in charge,<br />
+        mortality is all about entourage,<br />
+        feeling heavenly and ready to recharge.<br />
+<br /><font style="position: relative; left: 60px">- Rishabh Gupta</font></p></div><!-- Thinkers close --></center>
+<div class="pagebreak"></div><!--
+        ===================Thinkers page ends here=========================
+        ===================Thinkers page ends here=========================
+        ===================Thinkers page ends here=========================
+        -->
+
+<center>
+<div id="Thoughts"><br />
+<br /><br />
+<br /><br />
+<h1>O.o Thoughts o.O</h1><br />
+<p>
+What you take back from an experience is what defines you.
+<br /><font style="position: relative; left: 60px">- Rishabh Gupta 28/11/2013</font></p>
+<br>
+<p>
+Be not afraid of what you don't know but of not challenging yourself to learn.
+<br /><font style="position: relative; left: 60px">- Rishabh Gupta 11/03/2013</font></p>
+
+</div><!-- Thinkers close --></center>
+<div class="pagebreak"></div><!--
+        ===================Thinkers page ends here=========================
+        ===================Thinkers page ends here=========================
+        ===================Thinkers page ends here=========================
+        -->
+        
+<div id="Bottom"></div>
+<div class="strip">
+<p style="text-align: right">
+    &nbsp;&nbsp;<strong>|</strong>&nbsp;
+	<a rel="author" href="https://plus.google.com/104182819829972496401?rel=author"><font style="font-size:0px;">Google +</font></a>
+    <a href="#Welcome">Top</a>
+    &nbsp;&nbsp;<strong>|</strong>&nbsp;&nbsp;
+    <font id="button">Contact me</font>
+    &nbsp;&nbsp;<strong>|</strong>&nbsp;&nbsp;
+</p>
+<div id="popupContact">
+	<font id="cross">&nbsp;X&nbsp;</font>
+    <center>
+    <p><font style="font-size: 20px; font-weight: bold">Rishabh Gupta</font><br />
+    <strong style="font-size: 16px">Technosoft corp. | <font color="#990000">Software analyst</font></strong></p>
+    <img alt="" src="clip.gif" style="max-width:100px; position:absolute; top:80px; right:-7px;" />
+    <img alt="" src="rishabh_gupta_business_card.jpg" style="max-width: 340px" />
+    </center>
+</div>
+<div id="backgroundPopup"></div></div><!-- Strip close --><!-- end .content --></div>
+<div class="footer"><img src="skyline.gif" alt="Skyline" width="100%" align="middle" /></div><!-- Footer close --><!-- end .container --></div>
 </body>
 </html>
