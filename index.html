@@ -561,22 +561,16 @@ a:hover, a:active, a:focus {
 }
 
 .strip a:link {
-	font-family:&quot;Courier New&quot;, Courier, monospace;
 	color:#FFF;
-	font-weight:normal;
 	text-decoration: none;
-	font-size: 14px;
 }
 .strip a:visited {
 	color:#FFF;
 	text-decoration: none;
-	font-weight: normal;
 }
 .strip a:hover, a:active, a:focus {
 	color:#999;
-	font-weight: none;
 	text-decoration: none;
-	font-size: 14px;
 }
 .strip{
 	position:absolute;
@@ -590,6 +584,9 @@ a:hover, a:active, a:focus {
 	top:-30px;
 	right:190px;
 	border:1px solid #000;
+}
+.strip a, #button {
+	font: bold 18px 'Lucida Console', Monaco, monospace;
 }
 .gototop{
 	position:fixed;
@@ -609,8 +606,7 @@ a:hover, a:active, a:focus {
 }
 .wholepagebreak{
 	padding-top:450px;
-}<!-- editable css code--><!--==================================--><!--==================================--><!--==================================-->
-
+}
 
 #menu ul {
 	margin: 0;
@@ -652,7 +648,7 @@ a:hover, a:active, a:focus {
 #menu a {
 	width:150px;
 	float: left;
-	padding: 10px 20px;
+	padding: 10px 20px 8px 20px;
 	color: #999;
 	font: bold 18px 'Lucida Console', Monaco, monospace;
 	box-shadow: 0 2px 0 #333, 0 2px 0 #333;
@@ -676,16 +672,17 @@ a:hover, a:active, a:focus {
 	visibility: hidden;
 	position: absolute;
 	top: 0px;
-	left: 290px;
+	left: 215px;
 	background: #900;
 	text-align:left;
+	width:160px;
 }
 
 #menu li > ul {
-	transition: all .4s ease-in-out .2s;
-	-o-transition: all .4s ease-in-out .2s;
-	-moz-transition: all .4s ease-in-out .2s;
-	-webkit-transition: all .4s ease-in-out .2s;
+	transition: all .3s ease-in-out .1s;
+	-o-transition: all .3s ease-in-out .1s;
+	-moz-transition: all .3s ease-in-out .1s;
+	-webkit-transition: all .3s ease-in-out .1s;
 }
 
 #menu li:hover > ul, #menu li:active > ul {
@@ -693,14 +690,14 @@ a:hover, a:active, a:focus {
 	opacity: 0.92;
 	visibility: visible;
 	margin: 0;
-	transition: all .4s ease-in-out 0;
-	-o-transition: all .4s ease-in-out 0;
-	-moz-transition: all .4s ease-in-out 0;
-	-webkit-transition: all .4s ease-in-out 0;
-	-webkit-transform: translate(-100px, 0px);
-	-moz-transform: translate(-100px, 0px);
-	-o-transform: translate(-100px, 0px);
-	transform: translate(-100px, 0px);
+	transition: all .2s ease-in-out 0;
+	-o-transition: all .2s ease-in-out 0;
+	-moz-transition: all .2s ease-in-out 0;
+	-webkit-transition: all .2s ease-in-out 0;
+	-webkit-transform: translate(-25px, 0px);
+	-moz-transform: translate(-25px, 0px);
+	-o-transform: translate(-25px, 0px);
+	transform: translate(-25px, 0px);
 }
 
 #menu ul ul {
@@ -710,16 +707,16 @@ a:hover, a:active, a:focus {
 	visibility: hidden;
 	position: absolute;
 	top: 0px;
-	left: 695px;
+	left: 181px;
 	margin: 0px;
 	background: none;
 }
 
 #menu ul li > ul {
-	transition: all .4s ease-in-out .6s;
-	-o-transition: all .4s ease-in-out .6s;
-	-moz-transition: all .4s ease-in-out .6s;
-	-webkit-transition: all .4s ease-in-out .6s;
+	transition: all .3s ease-in-out .1s;
+	-o-transition: all .3s ease-in-out .1s;
+	-moz-transition: all .3s ease-in-out .1s;
+	-webkit-transition: all .3s ease-in-out .1s;
 }
 
 #menu ul li:hover > ul, #menu ul li:active > ul {
@@ -727,14 +724,14 @@ a:hover, a:active, a:focus {
 	opacity:1;
 	visibility: visible;
 	margin: 0;
-	transition: all .4s ease-in-out 0s;
-	-o-transition: all .4s ease-in-out 0s;
-	-moz-transition: all .4s ease-in-out 0s;
-	-webkit-transition: all .4s ease-in-out 0s;
-	-webkit-transform: translate(-499px, 0px);
-	-moz-transform: translate(-499px, 0px);
-	-o-transform: translate(-499px, 0px);
-	transform: translate(-499px, 0px);
+	transition: all .2s ease-in-out 0;
+	-o-transition: all .2s ease-in-out 0;
+	-moz-transition: all .2s ease-in-out 0;
+	-webkit-transition: all .2s ease-in-out 0;
+	-webkit-transform: translate(-25px, 0px);
+	-moz-transform: translate(-25px, 0px);
+	-o-transform: translate(-25px, 0px);
+	transform: translate(-25px, 0px);
 }
 
 #menu ul li {
@@ -756,10 +753,21 @@ a:hover, a:active, a:focus {
 	border-top: 8px solid transparent;
 	border-right: 8px solid #900;
 }
+#menu ul ul li:first-child > a:after {
+	content: '';
+	position: absolute;
+	left: -4px; 
+	top: 20px;
+	margin-top: -8px;
+	border-left: 0;	
+	border-bottom: 8px solid transparent;
+	border-top: 8px solid transparent;
+	border-right: 8px solid #1a1a1a;
+}
 
 #menu ul a {
-	padding: 10px 10px 10px 15px;
-	width: 175px;
+	padding: 10px 10px 8px 15px;
+	width: inherit;
 	_height: 10px; /*IE6 only*/
 	color:#000;
 	display: block;
@@ -773,15 +781,10 @@ a:hover, a:active, a:focus {
 }
 
 #menu ul ul img {
-	opacity:.8;
+	opacity:.9;
 	border: 2px solid #000;
-	max-height:190px;
-	max-width:190px;
-	
-	/*
-	position:relative;
-	left:-11px;
-	top:-10px;*/
+	max-height:178px;
+	max-width:178px;
 }
 #menu ul ul a {	
 	box-shadow:none;
@@ -789,8 +792,18 @@ a:hover, a:active, a:focus {
 	margin:0px 0px 0px 4px;
 }
 
+#menu ul ul img {
+	transition: all .2s ease-in-out 0;
+	-o-transition: all .2s ease-in-out 0;
+	-moz-transition: all .2s ease-in-out 0;
+	-webkit-transition: all .2s ease-in-out 0;
+}
 #menu ul ul img:hover, #menu ul ul img:active {
 	opacity:1;
+	transition: all .2s ease-in-out 0;
+	-o-transition: all .2s ease-in-out 0;
+	-moz-transition: all .2s ease-in-out 0;
+	-webkit-transition: all .2s ease-in-out 0;
 }
 
 .pic{
@@ -818,19 +831,19 @@ a:hover, a:active, a:focus {
 }
 #active img:hover{
 	z-index:10000;
-	-webkit-transform: scale(2);
+	-webkit-transform: scale(1.2);
 	-webkit-transition-timing-function: ease-in;
 	-webkit-transition-duration: 500ms;
 	
-	-moz-transform: scale(2);
+	-moz-transform: scale(1.2);
 	-moz-transition-timing-function: ease-in;
 	-moz-transition-duration: 500ms;
 	
-	-o-transform: scale(2);
+	-o-transform: scale(1.2);
 	-o-transition-timing-function: ease-in;
 	-o-transition-duration: 500ms;
 	
-	transform: scale(2);
+	transform: scale(1.2);
 	transition-timing-function: ease-in;
 	transition-duration: 500ms;
 }<!--==================================--><!--==================================--><!--==================================-->
@@ -841,18 +854,18 @@ a:hover, a:active, a:focus {
 <div class="sidebar1">
 <div id="sidebar1in"></div>
     <ul id="menu" style="list-style: none">
-    <li><a>Trash</a>
+    <li><a>trash</a>
         <ul>
-        <li><a href="#Welcome">Top</a></li>
-        <li><a href="#Germination">Germination</a></li>
-        <li><a href="#Dontclick">Don't click</a></li>
-        <li><a href="#Bottom">Bottom</a></li>
+        <li><a href="#Welcome">top</a></li>
+        <li><a href="#Germination">germination</a></li>
+        <li><a href="#Dontclick">don't click</a></li>
+        <li><a href="#Bottom">bottom</a></li>
         <li><img alt="" src="spacer.gif" /></li>
         </ul>
     </li>
-	<li><a>Clicks</a>
+	<li><a>clicks</a>
         <ul>
-        <li><a href="#Randomclicks">Random</a>
+        <li><a href="#Randomclicks">random</a>
             <ul>
             <li><a href="#Randomclicks"><img alt="" src="random.gif" border="1px" /></a></li>
             </ul>
@@ -890,63 +903,63 @@ a:hover, a:active, a:focus {
         <li><img alt="" src="spacer.gif" /></li>
         </ul>
 	</li>
-    <li><a>Words</a>
+    <li><a>words</a>
         <ul>
-        <li><a href="#Induction">Induction</a></li>
-        <li><a href="#Euthanasia">Euthanasia</a></li>
-        <li><a href="#Farewell">Farewell</a></li>
+        <li><a href="#Induction">induction</a></li>
+        <li><a href="#Euthanasia">euthanasia</a></li>
+        <li><a href="#Farewell">farewell</a></li>
         <li><img alt="" src="spacer.gif" /></li>
         </ul>
     </li>
-    <li><a>College</a>
+    <li><a>college</a>
         <ul>
         <li><a href="#NDSU">NDSU</a></li>
-        <li><a href="#Athletics">Athletics</a></li>
-        <li><a href="#Campuses">Campuses</a></li>
-        <li><a href="#ECEdept">ECE Dept.</a></li>
+        <li><a href="#Athletics">athletics</a></li>
+        <li><a href="#Campuses">campuses</a></li>
+        <li><a href="#ECEdept">ECE dept.</a></li>
         <li><img alt="" src="spacer.gif" /></li>
         </ul>
     </li>
-    <li><a>WeBLog</a>
+    <li><a>weBLog</a>
         <ul>
-        <li><a href="#Life">Life</a></li>
-        <li><a href="#Thinkers">Thinkers</a></li>
-        <li><a href="#Thoughts">Thoughts</a></li>
+        <li><a href="#Life">life</a></li>
+        <li><a href="#Thinkers">thinkers</a></li>
+        <li><a href="#Thoughts">thoughts</a></li>
         <li><img alt="" src="spacer.gif" /></li>
         </ul>
     </li>
 	
-	<li><a>WIP</a>
+	<li><a>wip</a>
         <ul>
         <li><a href="http://www.aakankshaindia.org" target="_blank">Aakanksha</a>
             <ul>
-            <li><a href="http://www.aakankshaindia.org" target="_blank"><img alt="" src="aakanksha.jpg" border="1px" /></a></li>
+            <li><a href="http://www.aakankshaindia.org" target="_blank"><img style="max-height: 128px;" alt="" src="aakanksha.jpg" border="1px" /></a></li>
             </ul>
         </li>
         <li><a href="http://www.cosmos2.rishabhgupta.us" target="_blank">Gallery</a>
             <ul>
-            <li><a href="http://www.cosmos2.rishabhgupta.us" target="_blank"><img alt="" src="cosmos.jpg" border="1px" /></a></li>
+            <li><a href="http://www.cosmos2.rishabhgupta.us" target="_blank"><img class="snapshot" alt="" src="cosmos.jpg" border="1px" /></a></li>
             </ul>
         </li>
         <li><a href="http://www.wildlife.rishabhgupta.us" target="_blank">WildLife</a>
             <ul>
-            <li><a href="http://www.wildlife.rishabhgupta.us" target="_blank"><img alt="" src="wildlife.jpg" /></a></li>
+            <li><a href="http://www.wildlife.rishabhgupta.us" target="_blank"><img class="snapshot" alt="" src="wildlife.jpg" /></a></li>
             </ul>
         </li>
         <li><a href="http://www.rstech.rishabhgupta.us" target="_blank">Technology</a>
             <ul>
-            <li><a href="http://www.rstech.rishabhgupta.us" target="_blank"><img alt="" src="tech.jpg" /></a></li>
+            <li><a href="http://www.rstech.rishabhgupta.us" target="_blank"><img class="snapshot" alt="" src="tech.jpg" /></a></li>
             </ul>
         </li>
         <li><a href="http://www.slideshow.rishabhgupta.us" target="_blank">SlideShow</a>
             <ul>
-            <li><a href="http://www.slideshow.rishabhgupta.us" target="_blank"><img alt="" src="slideshow.jpg" /></a></li>
+            <li><a href="http://www.slideshow.rishabhgupta.us" target="_blank"><img class="snapshot" alt="" src="slideshow.jpg" /></a></li>
             </ul>
         </li>
         <li><img alt="" src="spacer.gif" /></li>
         </ul>
 	</li>
-    <li><a><font id="buttonmenu">Contact me</font></a></li>
+    <li><a><font id="buttonmenu">contact me</font></a></li>
     <li><img alt="" src="spacer.gif" /></li>
     </ul>
 <!-- end .sidebar1 --></div>
@@ -963,7 +976,7 @@ a:hover, a:active, a:focus {
 <br /><br />
 <br />
 <p><font style="font-size: 24"><strong>Disclaimer:</strong></font><br />
-        This site is <strong>NOT</strong> meant for educational purposes. Knowledge crazy people stay advised, it's all plain old bs around here.</p></div><!-- Welcome1 close -->
+        This site is <strong>NOT</strong> meant for educational purposes. Knowledge crazy people stay advised, it's all plain old bs around here by some narsicistic, self-absorbed idiot.</p></div><!-- Welcome1 close -->
 <div class="pagebreak"></div><!--
         ===================Welcome page ends here=========================
         ===================Welcome page ends here=========================
@@ -1261,9 +1274,9 @@ Be not afraid of what you don't know but of not challenging yourself to learn.
 <p style="text-align: right">
     &nbsp;&nbsp;<strong>|</strong>&nbsp;
 	<a rel="author" href="https://plus.google.com/104182819829972496401?rel=author"><font style="font-size:0px;">Google +</font></a>
-    <a href="#Welcome">Top</a>
+    <a href="#Welcome">top</a>
     &nbsp;&nbsp;<strong>|</strong>&nbsp;&nbsp;
-    <font id="button">Contact me</font>
+    <font id="button">contact me</font>
     &nbsp;&nbsp;<strong>|</strong>&nbsp;&nbsp;
 </p>
 <div id="popupContact">
